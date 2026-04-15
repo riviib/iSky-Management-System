@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="420.0" prefWidth="520.0"
+            style="-fx-background-image: url('file:src/main/resources/se2203b/assignments/images/WesternBackground.png'); -fx-background-size: stretch;"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="se2203b.assignments.controller.LoginController">
+    <center>
+        <VBox alignment="CENTER" spacing="18.0" maxWidth="380.0" BorderPane.alignment="CENTER">
+            <padding><Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/></padding>
+
+            <Label text="iSky Portal" style="-fx-font-size:26px; -fx-font-weight:bold;"/>
+            <Label text="Sign in to continue" style="-fx-opacity:0.8;"/>
+            <Separator/>
+
+            <GridPane hgap="10.0" vgap="10.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="110.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Username" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtUsername" promptText="Enter username"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <PasswordField fx:id="txtPassword" promptText="Enter password"
+                               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label fx:id="lblError" text="" textFill="#b00020" wrapText="true"
+                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <rowConstraints>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                </rowConstraints>
+            </GridPane>
+
+            <HBox spacing="10.0" alignment="CENTER_LEFT">
+                <Button fx:id="btnLogin" text="Login" defaultButton="true"
+                        onAction="#handleLogin" prefWidth="120.0"/>
+                <Button text="Exit" cancelButton="true" onAction="#handleExit"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

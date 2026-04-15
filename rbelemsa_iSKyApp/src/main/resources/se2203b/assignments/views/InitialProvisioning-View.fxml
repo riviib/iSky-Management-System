@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="800.0" prefWidth="900.0" style="-fx-background-image: url('file:src/main/resources/se2203b/assignments/images/WesternBackground.png'); -fx-background-size: stretch;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se2203b.assignments.controller.InitialProvisioningController">
+    <top>
+        <HBox alignment="TOP_RIGHT" prefHeight="60.0">
+            <children>
+                <Button fx:id="btnProceed" disable="true" onAction="#handleProceed" text="Continue to main menu" />
+            </children>
+            <padding>
+                <Insets right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" maxWidth="800.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+            </padding>
+            <children>
+                <VBox alignment="TOP_LEFT" spacing="5.0">
+                    <children>
+                        <Label style="-fx-font-weight: bold;" text="iSky – Initial User Provisioning (Master only)">
+                            <font><Font size="18.0" /></font>
+                        </Label>
+                        <Label style="-fx-font-weight: bold;" text="Create initial accounts for each iSky role." />
+                        <Label text="Each role must have at least one account before regular use of the system." wrapText="true" />
+                        <Label fx:id="lblCurrentUser" style="-fx-font-size: 11px;" text="You are signed in as: [User]" />
+                    </children>
+                </VBox>
+
+                <TitledPane animated="false" collapsible="false" text="Business Manager">
+                    <content>
+                        <GridPane hgap="10.0" vgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="500.0" />
+                            </columnConstraints>
+                            <children>
+                                <Label text="Status:" />
+                                <Label fx:id="lblBMStatus" text="Missing" GridPane.columnIndex="1" />
+                                <Label text="Username" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtUsernameBM" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Temporary password" GridPane.rowIndex="2" />
+                                <PasswordField fx:id="txtPasswordBM" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Button onAction="#handleCreateBM" text="Create Business Manager" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+
+                <TitledPane animated="false" collapsible="false" text="Network Administrator">
+                    <content>
+                        <GridPane hgap="10.0" vgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="500.0" />
+                            </columnConstraints>
+                            <children>
+                                <Label text="Status:" />
+                                <Label fx:id="lblNAStatus" text="Missing" GridPane.columnIndex="1" />
+                                <Label text="Username" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtUsernameNA" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Temporary password" GridPane.rowIndex="2" />
+                                <PasswordField fx:id="txtPasswordNA" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Button onAction="#handleCreateNA" text="Create Network Administrator" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+
+                <TitledPane animated="false" collapsible="false" text="Line-of-Business Executive">
+                    <content>
+                        <GridPane hgap="10.0" vgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="500.0" />
+                            </columnConstraints>
+                            <children>
+                                <Label text="Status:" />
+                                <Label fx:id="lblLOBStatus" text="Missing" GridPane.columnIndex="1" />
+                                <Label text="Username" GridPane.rowIndex="1" />
+                                <TextField fx:id="txtUsernameLOB" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Temporary password" GridPane.rowIndex="2" />
+                                <PasswordField fx:id="txtPasswordLOB" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Button onAction="#handleCreateLOB" text="Create LOB Executive" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </content>
+                </TitledPane>
+
+                <Label fx:id="lblError" text="" textFill="#b00020" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
